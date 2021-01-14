@@ -7,6 +7,15 @@
 3) To install dependencies go to the project directory and run command $npm install
 4+ To run the application enter the command  $npm serve
 
+### Tool 
+1) Visual Studio Code 
+2) IntelliJ IDEA
+
+## Framkework 
+ 1) Angular 8
+ 2) Spring boot 
+
+
  PatientenkontakteApp gives the following functions
  ### functions
  1) Add paitent contact details
