@@ -9,9 +9,27 @@
 
  PatientenkontakteApp gives the following functions
  ### functions
- Add paitent contact details
- View patient contact details 
- Edit  patient contact detials 
- Delete patient contact detials
+ 1) Add paitent contact details
+ 2) View patient contact details 
+ 3) Edit  patient contact detials 
+ 4) Delete patient contact detials
+ 5) Rest Form (Clear the form)
+ 6) Search by last name
+ 
+ ### Validations 
+   1) Vornamen  *Required
+
+  2)  Nachname *Required 
+
+  3)  Geburtsdatum *Required Can select date via datepicker (calender )
+
+  4) E-Mail    *Required *correctEmailFormate   check *duplication *(cannot create duplicate records)
+
+  5) Versicherungs name  *Required 
+
+  6) Telefon-Nummer *Required 
+
+  7)  Adresse      *Required 
+
 
 
