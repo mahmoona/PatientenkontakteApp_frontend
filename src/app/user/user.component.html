@@ -1,0 +1,75 @@
+<div>
+  <form #patientForm="ngForm">
+    <div class="divider">
+      <mat-form-field>
+        <input
+          type="text"
+          class="form-control"
+          (change)="getUsersByName()"
+          matInput
+          #search="ngModel"
+          placeholder="smith"
+          name="search"
+          #search
+          [(ngModel)]="userObj.search"
+        />
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="btn btn-warning">
+        Search
+      </button>
+    </div>
+  </form>
+  <br />
+  <table class="table">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">#</th>
+        <th scope="col">Vornamen</th>
+        <th scope="col">Nachname</th>
+        <th scope="col">Geburtsdatum</th>
+        <th scope="col">Versicherungs name</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Telefon-Nummer</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Aktion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let user of allUsers | paginate: { itemsPerPage: 5, currentPage: p }
+        "
+        class="text-center"
+      >
+        <td>{{ user.id }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.dateOfBirth }}</td>
+        <td>{{ user.insurance }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phoneNumber }}</td>
+        <td>{{ user.address }}</td>
+        <td>
+          <div class="divider">
+            <button
+              mat-raised-button
+              (click)="editUser(user)"
+              class="btn btn-warning"
+            >
+              Edit
+            </button>
+            <button
+              mat-raised-button
+              color="warn"
+              (click)="deleteUser(user)"
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </table>
+</div>
