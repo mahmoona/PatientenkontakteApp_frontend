@@ -26,7 +26,7 @@ frontend source code is in master Branch
  2) View patient contact details 
  3) Edit  patient contact detials 
  4) Delete patient contact detials
- 5) Rest Form (Clear the form)
+ 5) Reset Form (Clear the form)
  6) Search by first name
  
  ### Validations 
