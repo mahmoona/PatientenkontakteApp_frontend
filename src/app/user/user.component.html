@@ -8,7 +8,7 @@
           (change)="getUsersByName()"
           matInput
           #search="ngModel"
-          placeholder="smith"
+          placeholder="Vornamen"
           name="search"
           #search
           [(ngModel)]="userObj.search"
@@ -54,17 +54,17 @@
             <button
               mat-raised-button
               (click)="editUser(user)"
-              class="btn btn-warning"
+             
             >
-              Edit
+            <span class="material-icons edit-icon-color"> edit </span>
             </button>
             <button
               mat-raised-button
-              color="warn"
+
               (click)="deleteUser(user)"
-              class="btn btn-danger"
+              
             >
-              Delete
+            <span class="material-icons delete-icon-color"> delete </span>
             </button>
           </div>
         </td>

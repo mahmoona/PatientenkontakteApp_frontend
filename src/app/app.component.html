@@ -2,51 +2,159 @@
   <div class="list-viewer-wrapper">
     <h1 class="list-header-title">Patient Kontakt Form</h1>
     <form #patientForm="ngForm" class="form-container">
-  <mat-form-field >
-  <mat-label >Vornamen</mat-label>
-  <input type="hidden" class="form-control"  placeholder=" Jhon " name='id' [(ngModel)] = "userObj.id">
-  <input type="text"  required matInput #firstName="ngModel" class="form-control"  placeholder=" Jhon "  name='firstName' #firstName [(ngModel)] = "userObj.firstName">
-  </mat-form-field>
-<br/>
-  <mat-form-field >
-  <mat-label >Nachname</mat-label>
-  <input type="text" class="form-control" required matInput #lastName="ngModel" placeholder="  smith"  name='lastName' #lastName [(ngModel)] = "userObj.lastName">
-  </mat-form-field>
- <br/>
-  <mat-form-field >
-  <mat-label >Geburtsdatum</mat-label>
-  <input matInput [matDatepicker]="picker" class="form-control" required  #dateOfBirth="ngModel" placeholder=" 17-07-1995"   name='dateOfBirth' #dateOfBirth [(ngModel)] = "userObj.dateOfBirth">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>  
-  </mat-form-field>
-<br/>
-  <mat-form-field>
-  <mat-label >Versicherungs name</mat-label>
-  <input type="text" class="form-control" required matInput #insurance="ngModel" placeholder="Aok" name='insurance' #insurance [(ngModel)] = "userObj.insurance" >
-  </mat-form-field>
- <br/>
-  <mat-form-field>
-  <mat-label >E-Mail</mat-label>
-  <input type="email" (change)="checkEmail()" [disabled]="updateButton" class="form-control" required matInput #email="ngModel" placeholder="name@example.com" name='email' #email  [(ngModel)] = "userObj.email" >
-  </mat-form-field>
-  <div  *ngIf="!emailValidator"><span style="color: red;">Email Address Already Exist.</span></div>
-<br/>
-  <mat-form-field>
-  <mat-label>Telefon-Nummer</mat-label>
-  <input type="text" class="form-control" required matInput #phoneNumber="ngModel" placeholder="+4917676887472" name='phoneNumber' #phoneNumber   [(ngModel)] = "userObj.phoneNumber" >
-  </mat-form-field>
-<br/>
-  <mat-form-field>
-  <mat-label >Adresse</mat-label>
-  <textarea class="form-control" class="form-control" required matInput #address="ngModel" id="exampleFormControlTextarea1"  name="address" #address rows="3" [(ngModel)] = "userObj.address"></textarea>
-  </mat-form-field>
-<br/>
-  <button mat-raised-button color="primary" type='button' *ngIf="addButton" class="btn btn-primary" [disabled]="!patientForm.form.valid || !emailValidator"  (click)='addUser(patientForm )'> add </button>
-<button mat-raised-button color="primary" class="btn btn-primary" *ngIf="updateButton" [disabled]="!patientForm.form.valid"  (click)="updateUser(patientForm)"> Update </button>
-<button mat-raised-button color="primary" class="btn btn-primary"  (click)="reset()"> reset </button>
-</form>
+      <mat-form-field>
+        <mat-label>Vornamen</mat-label>
+        <input
+          type="hidden"
+          class="form-control"
+          placeholder=" Jhon "
+          name="id"
+          [(ngModel)]="userObj.id"
+        />
+        <input
+          type="text"
+          required
+          matInput
+          #firstName="ngModel"
+          class="form-control"
+          placeholder=" Jhon "
+          name="firstName"
+          #firstName
+          [(ngModel)]="userObj.firstName"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Nachname</mat-label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          matInput
+          #lastName="ngModel"
+          placeholder="  smith"
+          name="lastName"
+          #lastName
+          [(ngModel)]="userObj.lastName"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Geburtsdatum</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          class="form-control"
+          required
+          #dateOfBirth="ngModel"
+          placeholder=" 17-07-1995"
+          name="dateOfBirth"
+          #dateOfBirth
+          [(ngModel)]="userObj.dateOfBirth"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Versicherungs name</mat-label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          matInput
+          #insurance="ngModel"
+          placeholder="Aok"
+          name="insurance"
+          #insurance
+          [(ngModel)]="userObj.insurance"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>E-Mail</mat-label>
+        <input
+          type="email"
+          (change)="checkEmail()"
+          [disabled]="updateButton"
+          class="form-control"
+          required
+          matInput
+          #email="ngModel"
+          placeholder="name@example.com"
+          name="email"
+          #email
+          [(ngModel)]="userObj.email"
+        />
+      </mat-form-field>
+      <div *ngIf="!emailValidator">
+        <span style="color: red">Email Address Already Exist.</span>
+      </div>
+      <br />
+      <mat-form-field>
+        <mat-label>Telefon-Nummer</mat-label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          matInput
+          #phoneNumber="ngModel"
+          placeholder="+4917676887472"
+          name="phoneNumber"
+          #phoneNumber
+          [(ngModel)]="userObj.phoneNumber"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Adresse</mat-label>
+        <textarea
+          class="form-control"
+          class="form-control"
+          required
+          matInput
+          #address="ngModel"
+          id="exampleFormControlTextarea1"
+          name="address"
+          #address
+          rows="3"
+          [(ngModel)]="userObj.address"
+        ></textarea>
+      </mat-form-field>
+      <br />
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        *ngIf="addButton"
+        class="btn btn-primary"
+        [disabled]="!patientForm.form.valid || !emailValidator"
+        (click)="addUser(patientForm)"
+      >
+        add
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="btn btn-primary"
+        *ngIf="updateButton"
+        [disabled]="!patientForm.form.valid"
+        (click)="updateUser(patientForm)"
+      >
+        Update
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="btn btn-primary"
+        (click)="reset()"
+      >
+        reset
+      </button>
+    </form>
+  </div>
 </div>
+<hr />
+<div  class="d-flex justify-content-center">
+  <app-user (sendToParent)="receiveUser($event)"></app-user>
 </div>
-<hr>
-<div class="container">
-<app-user (sendToParent)="receiveUser($event)"></app-user></div>
