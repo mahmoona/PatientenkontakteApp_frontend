@@ -47,8 +47,7 @@ frontend source code is in master Branch
    # Backend Repo 
   https://github.com/mahmoona/PatientenkontakteApp_backend
   
-  # interface 
-  https://github.com/mahmoona/PatientenkontakteApp_frontend/commit/56bd88eec82e1826235c664e49298fcd0d51ca11 
+  
 
 
 
