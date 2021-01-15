@@ -27,7 +27,7 @@ frontend source code is in master Branch
  3) Edit  patient contact detials 
  4) Delete patient contact detials
  5) Rest Form (Clear the form)
- 6) Search by last name
+ 6) Search by first name
  
  ### Validations 
    1) Vornamen  *Required
@@ -46,6 +46,9 @@ frontend source code is in master Branch
   
    # Backend Repo 
   https://github.com/mahmoona/PatientenkontakteApp_backend
+  
+  # interface 
+  
 
 
 
